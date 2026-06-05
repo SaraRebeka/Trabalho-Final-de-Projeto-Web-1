@@ -1,4 +1,4 @@
-# 🕴️ Para o quem for testar e avaliar 
+# 🕴️ Para quem for testar e avaliar 
 
 Lembre de caminhar até a pasta onde está o back-end;
 
