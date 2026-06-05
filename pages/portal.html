@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal MVC — Departamentos</title>
+  <link rel="stylesheet" href="../assets/css/estilos.css" />
+  <link rel="icon" href="../assets/imagens/favicon(MVC).png">
+  <style>
+    .portal-container { max-width: 1100px; }
+
+    .portal-intro {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+
+    .portal-grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .dept-card {
+      background: rgba(30, 0, 40, 0.7);
+      border: 1px solid #e100ff44;
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: box-shadow 0.3s, transform 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .dept-card:hover {
+      box-shadow: 0 0 24px #e100ff66;
+      transform: translateY(-4px);
+    }
+
+    .dept-card.restrito {
+      border-color: #ff440044;
+    }
+
+    .dept-card.restrito:hover {
+      box-shadow: 0 0 24px #ff440066;
+    }
+
+    .dept-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .dept-icone { font-size: 2rem; }
+
+    .dept-badge {
+      font-size: 0.65rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .badge-publico {
+      background: rgba(0, 220, 100, 0.1);
+      color: #00dc64;
+      border: 1px solid #00dc6444;
+    }
+
+    .badge-restrito {
+      background: rgba(255, 68, 0, 0.1);
+      color: #ff6633;
+      border: 1px solid #ff440044;
+    }
+
+    .dept-nome {
+      font-size: 1rem;
+      color: #fff;
+      text-shadow: 0 0 8px #e100ff;
+      margin: 0;
+      text-align: left;
+    }
+
+    .dept-card.restrito .dept-nome {
+      text-shadow: 0 0 8px #ff4400;
+    }
+
+    .dept-itens {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dept-itens li {
+      font-size: 0.78rem;
+      color: #888;
+      padding-left: 14px;
+      position: relative;
+      text-align: left;
+      margin: 0;
+    }
+
+    .dept-itens li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: #e100ff;
+    }
+
+    .dept-card.restrito .dept-itens li::before {
+      color: #ff6633;
+    }
+
+    .dept-footer {
+      font-size: 0.72rem;
+      color: #555;
+      text-align: right;
+      margin-top: auto;
+    }
+
+    .dept-card.restrito .dept-footer { color: #ff440055; }
+
+    @media (max-width: 480px) {
+      .portal-grade { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container portal-container">
+    <h2>🌐 Portal de Departamentos</h2>
+    <p class="portal-intro">
+      Acesse os setores operacionais da Multiversal Void Company.<br/>
+      Alguns departamentos requerem autorização dimensional.
+    </p>
+
+    <!-- DEPARTAMENTOS PÚBLICOS -->
+    <div class="portal-grade">
+
+      <a href="departamentos/comercial.html" class="dept-card">
+        <div class="dept-header">
+          <span class="dept-icone">🛒</span>
+          <span class="dept-badge badge-publico">Público</span>
+        </div>
+        <h3 class="dept-nome">Departamento Comercial</h3>
+        <ul class="dept-itens">
+          <li>Lojinha</li>
+          <li>Parceiros</li>
+          <li>Licenciamento</li>
+        </ul>
+        <span class="dept-footer">Acesso liberado</span>
+      </a>
+
+      <a href="departamentos/suporte.html" class="dept-card">
+        <div class="dept-header">
+          <span class="dept-icone">🎧</span>
+          <span class="dept-badge badge-publico">Público</span>
+        </div>
+        <h3 class="dept-nome">Departamento de Suporte</h3>
+        <ul class="dept-itens">
+          <li>Central de Atendimento</li>
+          <li>Status dos Pedidos</li>
+          <li>Perguntas Frequentes</li>
+        </ul>
+        <span class="dept-footer">Acesso liberado</span>
+      </a>
+
+      <a href="departamentos/investidores.html" class="dept-card">
+        <div class="dept-header">
+          <span class="dept-icone">📈</span>
+          <span class="dept-badge badge-publico">Público</span>
+        </div>
+        <h3 class="dept-nome">Investidores</h3>
+        <ul class="dept-itens">
+          <li>Apresentação Institucional</li>
+          <li>Relatórios Financeiros</li>
+          <li>Oportunidades de Investimento</li>
+        </ul>
+        <span class="dept-footer">Acesso liberado</span>
+      </a>
+
+      <!-- DEPARTAMENTOS RESTRITOS -->
+      <a href="departamentos/tecnologia.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">⚙️</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Departamento de Tecnologia</h3>
+        <ul class="dept-itens">
+          <li>Projetos</li>
+          <li>Pesquisas</li>
+          <li>IA</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+      <a href="departamentos/exploracao.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">🚀</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Departamento de Exploração</h3>
+        <ul class="dept-itens">
+          <li>Universos Catalogados</li>
+          <li>Portais Ativos</li>
+          <li>Relatórios</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+      <a href="departamentos/anomalias.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">⚠️</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Departamento de Anomalias</h3>
+        <ul class="dept-itens">
+          <li>Incidentes</li>
+          <li>Objetos Perdidos</li>
+          <li>Realidades Quebradas</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+      <a href="departamentos/ti.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">🖥️</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Departamento de TI</h3>
+        <ul class="dept-itens">
+          <li>Infraestrutura</li>
+          <li>Segurança Dimensional</li>
+          <li>Sistemas Internos</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+      <a href="departamentos/rh.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">👥</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Recursos Humanos</h3>
+        <ul class="dept-itens">
+          <li>Vagas</li>
+          <li>Agentes Ativos</li>
+          <li>Treinamentos</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+      <a href="departamentos/juridico.html" class="dept-card restrito">
+        <div class="dept-header">
+          <span class="dept-icone">⚖️</span>
+          <span class="dept-badge badge-restrito">🔒 Restrito</span>
+        </div>
+        <h3 class="dept-nome">Jurídico</h3>
+        <ul class="dept-itens">
+          <li>Contratos</li>
+          <li>Licenças Interdimensionais</li>
+          <li>Conformidade Multiversal</li>
+        </ul>
+        <span class="dept-footer">Requer autorização</span>
+      </a>
+
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+</body>
+</html>

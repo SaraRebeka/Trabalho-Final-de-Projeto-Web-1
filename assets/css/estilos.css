@@ -1,0 +1,905 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GARANTIR QUE BODY E HTML TEM 100% DE ALTURA */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* BODY */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* CONTAINER PRINCIPAL - CRESCE PARA EMPURRAR O FOOTER */
+.container {
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* CABEÇALHO */
+header {
+  text-align: center;
+  animation: neon-glow forwards;
+  margin-bottom: 30px;
+}
+
+/* NAVEGAÇÃO */
+nav {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  font-size: 16px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background-color: #fff;
+  color: rgb(100, 0, 83);
+  outline: none;
+}
+
+/* TÍTULOS */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+h1 {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff, 0 0 30px #e100ff;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  text-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff;
+}
+
+/* PARÁGRAFOS */
+p {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #ccc;
+  margin-top: 20px;
+}
+
+/* BOTÕES */
+button {
+  margin-top: 40px;
+  padding: 15px 40px;
+  border: 2px solid #e100ff;
+  background: transparent;
+  color: #e100ff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff;
+}
+
+button:hover,
+button:focus {
+  background: #e100ff;
+  color: #000;
+  box-shadow: 0 0 20px #e100ff, 0 0 40px #e100ff;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* NEON */
+@keyframes neon-glow {
+  to{
+    text-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff, 0 0 30px #e100ff;
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    padding: 12px 30px;
+  }
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: auto; /* para ficar na base */
+  border-top: 1px solid #e100ff44;
+  padding-top: 16px;
+}
+
+/* Espaçamento inferior dos parágrafos dentro de seções na página de serviços */
+.container section p {
+  margin-bottom: 1.5rem; /* ou o valor que preferir, ex: 24px */
+}
+/* FORMULÁRIO DE CONTATO */
+.contato-form {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 20px;
+  background-color: rgba(30, 0, 40, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 20px #e100ff66;
+}
+
+.contato-form h2 {
+  margin-bottom: 25px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 10px #e100ff;
+}
+
+.contato-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ddd;
+  font-weight: 600;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #e100ff;
+  border-radius: 8px;
+  background-color: #1a001f;
+  color: #eee;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  border-color: #ff52ff;
+  outline: none;
+  box-shadow: 0 0 8px #ff52ff;
+}
+
+.contato-form button {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e100ff;
+  background: transparent;
+  color: #e100ff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff;
+}
+
+.contato-form button:hover,
+.contato-form button:focus {
+  background: #e100ff;
+  color: #000;
+  box-shadow: 0 0 20px #e100ff, 0 0 40px #e100ff;
+  transform: scale(1.05);
+  outline: none;
+}
+
+.linha-do-tempo {
+  margin: 60px auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #e100ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #e100ff66;
+  animation: fadeIn 2s ease-in;
+  text-align: left;
+}
+
+.linha-do-tempo h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #e100ff;
+}
+
+.linha-do-tempo ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.linha-do-tempo li {
+  margin: 10px 0;
+  font-size: 1.1rem;
+  color: #ccc;
+  position: relative;
+  padding-left: 30px;
+}
+
+.linha-do-tempo li::before {
+  content: "🪐";
+  position: absolute;
+  left: 0;
+}
+.Baixo{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 25px;
+}
+
+.Baixo a{
+  color: #ccc;
+}
+
+/* ============================================================
+   LOJINHA — Estilos do e-commerce
+   ============================================================ */
+
+.lojinha-container {
+  max-width: 1100px;
+}
+
+/* BUSCA */
+.busca-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 30px;
+}
+
+.busca-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 18px;
+  border: 2px solid #e100ff;
+  border-radius: 8px;
+  background: #1a001f;
+  color: #eee;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.95rem;
+  transition: box-shadow 0.3s;
+}
+
+.busca-input:focus {
+  outline: none;
+  box-shadow: 0 0 12px #e100ff;
+}
+
+/* GRADE DE PRODUTOS */
+.grade-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.carregando {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #888;
+}
+
+/* CARD DE PRODUTO */
+.card-produto {
+  background: rgba(30, 0, 40, 0.7);
+  border: 1px solid #e100ff55;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+
+.card-produto:hover {
+  box-shadow: 0 0 20px #e100ff66;
+  transform: translateY(-3px);
+}
+
+.card-imagem {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(225, 0, 255, 0.05);
+}
+
+.card-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sem-imagem {
+  font-size: 3.5rem;
+}
+
+.card-nome {
+  font-size: 0.95rem;
+  color: #fff;
+  text-shadow: 0 0 6px #e100ff;
+  text-align: left;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  color: #aaa;
+  text-align: left;
+  line-height: 1.5;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-preco {
+  font-size: 1.1rem;
+  color: #e100ff;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0;
+}
+
+.card-estoque {
+  font-size: 0.75rem;
+  color: #666;
+  text-align: left;
+  margin-top: 0;
+}
+
+.btn-adicionar {
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 0.85rem;
+}
+
+/* ── CARRINHO FLUTUANTE ───────────────────────────────────── */
+.btn-carrinho-abrir {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-size: 1rem;
+  z-index: 100;
+  margin-top: 0;
+  background: #0d0010;
+}
+
+.carrinho-flutuante {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 340px;
+  height: 100vh;
+  background: #0d0010;
+  border-left: 2px solid #e100ff44;
+  box-shadow: -4px 0 30px #e100ff33;
+  display: flex;
+  flex-direction: column;
+  z-index: 200;
+  transition: transform 0.3s ease;
+}
+
+.carrinho-flutuante.oculto {
+  display: none;
+}
+
+.carrinho-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e100ff33;
+}
+
+.carrinho-header h3 {
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 0 0 8px #e100ff;
+}
+
+.btn-fechar {
+  background: transparent;
+  border: none;
+  color: #e100ff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin: 0;
+  box-shadow: none;
+}
+
+.btn-fechar:hover {
+  color: #fff;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.carrinho-itens {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carrinho-vazio {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(225, 0, 255, 0.07);
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 0.82rem;
+}
+
+.item-nome {
+  flex: 1;
+  color: #ddd;
+}
+
+.item-controles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #eee;
+}
+
+.btn-qty {
+  background: transparent;
+  border: 1px solid #e100ff;
+  color: #e100ff;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-qty:hover {
+  background: #e100ff;
+  color: #000;
+  transform: none;
+  box-shadow: none;
+}
+
+.item-subtotal {
+  color: #e100ff;
+  min-width: 70px;
+  text-align: right;
+  font-size: 0.8rem;
+}
+
+.btn-remover {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 2px;
+  margin: 0;
+  box-shadow: none;
+  color: #666;
+}
+
+.btn-remover:hover {
+  color: #ff4444;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+}
+
+.carrinho-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e100ff33;
+}
+
+.carrinho-total {
+  text-align: right;
+  color: #eee;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.btn-checkout {
+  width: 100%;
+  margin-top: 0;
+  padding: 12px;
+}
+
+.btn-checkout:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── CHECKOUT ─────────────────────────────────────────────── */
+.checkout-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 30px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.checkout-resumo {
+  background: rgba(30, 0, 40, 0.7);
+  border: 1px solid #e100ff44;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.checkout-resumo h3 {
+  color: #fff;
+  font-size: 0.95rem;
+  text-shadow: 0 0 8px #e100ff;
+  margin-bottom: 16px;
+}
+
+.resumo-item {
+  display: flex;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 0.82rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #ffffff11;
+}
+
+.resumo-total {
+  text-align: right;
+  color: #e100ff;
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+.checkout-form h3 {
+  color: #fff;
+  font-size: 0.9rem;
+  text-shadow: 0 0 8px #e100ff;
+  margin-bottom: 14px;
+}
+
+.erro-msg {
+  background: rgba(255, 50, 50, 0.15);
+  border: 1px solid #ff3333;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #ff8080;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.btn-confirmar {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ── CONFIRMAÇÃO ──────────────────────────────────────────── */
+.confirmacao-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px 60px;
+}
+
+.confirmacao-box {
+  background: rgba(30, 0, 40, 0.8);
+  border: 1px solid #e100ff66;
+  border-radius: 16px;
+  padding: 40px 32px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 30px #e100ff33;
+  text-align: center;
+}
+
+.confirmacao-icone {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.confirmacao-msg {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.confirmacao-detalhes {
+  background: rgba(225, 0, 255, 0.06);
+  border-radius: 10px;
+  padding: 16px 20px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.confirmacao-detalhes p {
+  font-size: 0.85rem;
+  color: #ccc;
+  text-align: left;
+  margin: 6px 0;
+}
+
+.conf-itens {
+  text-align: left;
+  margin-bottom: 20px;
+  background: rgba(225, 0, 255, 0.04);
+  border-radius: 10px;
+  padding: 14px 20px;
+}
+
+.conf-itens h4 {
+  font-size: 0.85rem;
+}
+
+.confirmacao-aviso {
+  font-size: 0.82rem;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.btn-voltar-loja {
+  display: inline-block;
+  padding: 12px 32px;
+  border: 2px solid #e100ff;
+  color: #e100ff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  box-shadow: 0 0 10px #e100ff;
+}
+
+.btn-voltar-loja:hover {
+  background: #e100ff;
+  color: #000;
+  box-shadow: 0 0 20px #e100ff, 0 0 40px #e100ff;
+}
+
+/* RESPONSIVO */
+@media (max-width: 850px) {
+  .checkout-wrapper { grid-template-columns: 1fr; }
+  .carrinho-flutuante { width: 100%; height: 100dvh; }
+}
+
+@media (max-width: 320px) {
+  .grade-produtos { grid-template-columns: 1fr; }
+}
+/* ============================================================
+   CORREÇÕES GERAIS
+   ============================================================ */
+
+/* Classe utilitária oculto — usada em admin, checkout e lojinha */
+.oculto {
+  display: none !important;
+}
+
+/* H3 global — aparece no checkout, admin e confirmação */
+h3 {
+  color: #fff;
+  text-shadow: 0 0 8px #e100ff;
+  margin-bottom: 12px;
+}
+
+/* Header injetado via JS — garante espaçamento correto do topo */
+body > header {
+  margin-top: 0;
+  padding-top: 10px;
+}
+
+/* ── FOOTER MOBILE ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .Baixo {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px;
+    justify-content: center;
+  }
+
+  .Baixo li {
+    flex: 0 0 auto;
+  }
+}
+
+/* ── ADMIN MOBILE ───────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .admin-header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-header-bar h2 {
+    font-size: 1rem;
+  }
+
+  #btn-logout {
+    align-self: flex-start;
+  }
+
+  .admin-abas {
+    flex-wrap: wrap;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── SEPARADOR DO HEADER ────────────────────────────────────── */
+header {
+  border-bottom: 1px solid #e100ff44;
+  padding-bottom: 16px;
+  margin-bottom: 30px;
+}
+
+/* ── ADMIN HEADER BAR — correção do botão Sair ──────────────── */
+.admin-header-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+#btn-logout {
+  margin: 0;
+  margin-left: auto;
+}
+
+@media (max-width: 480px) {
+  #btn-logout {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/*É pra corrigir coisa do meu TOC*/
+
+footer {
+  margin-top: 30px;
+}
+/* ── MOBILE S (320px–480px) ─────────────────────────────────── */
+
+/* Email longo não vaze da tela pelo amor de Jesus Cristo */
+p, strong, a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Footer — 2 colunas simétricas no mobile */
+@media (max-width: 480px) {
+  .Baixo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    justify-items: center;
+    padding: 16px;
+  }
+}
+
+/* Botão carrinho sobrepõe conteúdo? Poẽ um background kskskskskks*/
+@media (max-width: 480px) {
+  .btn-carrinho-abrir {
+    bottom: 16px;
+    right: 16px;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    background: #0d0010;
+  }
+
+  .lojinha-container {
+    padding-bottom: 100px;
+  }
+}
+
+/*Pro problema do mobile que a lixeira saia dos limites*/
+
+@media (max-width: 480px) {
+  .carrinho-item {
+    flex-wrap: wrap;
+  }
+
+  .item-nome {
+    width: 100%;
+  }
+
+  .item-subtotal {
+    min-width: unset;
+    margin-left: auto;
+  }
+}
+/*Mais coisa do meu TOC*/
+header h1 {
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e100ff44;
+  margin-bottom: 16px;
+}
+
+footer p {
+  padding-top: 16px;
+  border-top: 1px solid #e100ff44;
+}
+
+footer p a {
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 10px #e100ff;
+}

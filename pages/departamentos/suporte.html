@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departamento de Suporte - MVC</title>
+  <link rel="stylesheet" href="../../assets/css/estilos.css" />
+  <link rel="icon" href="../../assets/imagens/favicon(MVC).png">
+  <style>
+    .dept-page { max-width: 800px; }
+    .dept-page-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .dept-page-icone { font-size: 2.5rem; }
+    .dept-voltar {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #e100ff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: opacity 0.2s;
+    }
+    .dept-voltar:hover { opacity: 0.7; }
+    .dept-secao {
+      background: rgba(30, 0, 40, 0.7);
+      border: 1px solid #e100ff33;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .dept-secao h3 { margin-bottom: 12px; font-size: 0.95rem; }
+    .dept-secao p { text-align: left; font-size: 0.88rem; color: #aaa; margin-top: 0; }
+    .em-breve {
+      text-align: center;
+      color: #444;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container dept-page">
+    <a href="../portal.html" class="dept-voltar">← Voltar ao Portal</a>
+    <div class="dept-page-header">
+      <span class="dept-page-icone">🎧</span>
+      <h2>Departamento de Suporte</h2>
+    </div>
+    <p style="text-align:center; margin-bottom:30px;">Aqui para ajudar viajantes, clientes e entidades em qualquer realidade.</p>
+    <div class="dept-secao"><h3>📞 Central de Atendimento</h3><p>Nossa equipe de suporte opera em múltiplos fusos temporais. Tempo médio de resposta: 1 hora dimensional. <a href="../contato.html" style="color:#e100ff">Abrir chamado →</a></p></div>
+   <div class="dept-secao"><h3>📦 Status dos Pedidos</h3><p>Acompanhe seu pedido informando o número e e-mail usados na compra. <a href="../lojinha.html" style="color:#e100ff">Ir para a Lojinha →</a></p></div>
+   <div class="dept-secao"><h3>❓ Perguntas Frequentes</h3><p>Encontre respostas para as dúvidas mais comuns sobre nossos serviços e produtos. <a href="../faq.html" style="color:#e100ff">Ver FAQ →</a></p></div>
+    <p class="em-breve">🌀 Conteúdo completo em desenvolvimento dimensional.</p>
+  </div>
+  <script src="../../assets/js/script.js"></script>
+</body>
+</html>

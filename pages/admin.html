@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel Admin - MVC</title>
+  <link rel="stylesheet" href="../assets/css/estilos.css" />
+  <link rel="icon" href="../assets/imagens/favicon(MVC).png">
+  <style>
+    /* LOGIN VIA PORTAL */
+    #admin-login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+    #login-box {
+      background: rgba(30, 0, 40, 0.85);
+      border: 1px solid #e100ff66;
+      border-radius: 16px;
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 30px #e100ff33;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    #login-box h3 {
+      color: #fff;
+      text-align: center;
+      font-size: 0.95rem;
+      text-shadow: 0 0 8px #e100ff;
+      margin-bottom: 6px;
+    }
+    #login-box input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e100ff;
+      border-radius: 8px;
+      background: #1a001f;
+      color: #eee;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+    #login-box input:focus { outline: none; box-shadow: 0 0 8px #e100ff; }
+    #login-erro {
+      color: #ff8080;
+      font-size: 0.78rem;
+      text-align: center;
+      min-height: 18px;
+    }
+    #btn-login {
+      margin-top: 0;
+      width: 100%;
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+    .login-dica {
+      font-size: 0.7rem;
+      color: #333;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    /* PAINEL */
+    #admin-painel { display: none; }
+    #admin-painel.ativo { display: block; }
+
+    .admin-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .admin-header-bar h2 { margin: 0; text-align: left; }
+    #btn-logout {
+      margin: 0;
+      padding: 8px 20px;
+      font-size: 0.75rem;
+    }
+
+    /* ABAS */
+    .admin-abas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .aba {
+      padding: 10px 22px;
+      border: 1px solid #e100ff44;
+      border-radius: 8px;
+      background: transparent;
+      color: #aaa;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.78rem;
+      cursor: pointer;
+      margin: 0;
+      box-shadow: none;
+      transition: all 0.2s;
+      text-transform: uppercase;
+    }
+    .aba:hover { color: #e100ff; border-color: #e100ff; box-shadow: none; transform: none; }
+    .aba.ativa { background: #e100ff; color: #000; border-color: #e100ff; box-shadow: 0 0 10px #e100ff; }
+
+    /* TABELAS */
+    .admin-tabela-wrapper { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+    th {
+      background: rgba(225, 0, 255, 0.15);
+      color: #e100ff;
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid #e100ff33;
+    }
+    td {
+      padding: 10px 12px;
+      color: #ccc;
+      border-bottom: 1px solid #ffffff0a;
+      vertical-align: middle;
+    }
+    tr:hover td { background: rgba(225, 0, 255, 0.04); }
+
+    /* BADGE STATUS */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+    .badge-pendente   { background: rgba(255,180,0,0.15);  color: #ffb400; border: 1px solid #ffb40044; }
+    .badge-confirmado { background: rgba(0,220,100,0.15);  color: #00dc64; border: 1px solid #00dc6444; }
+    .badge-cancelado  { background: rgba(255,50,50,0.15);  color: #ff5050; border: 1px solid #ff505044; }
+
+    /* FORM PRODUTO */
+    .admin-form {
+      background: rgba(30,0,40,0.7);
+      border: 1px solid #e100ff33;
+      border-radius: 14px;
+      padding: 24px;
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .admin-form h3 { color: #fff; font-size: 0.9rem; text-shadow: 0 0 8px #e100ff; margin-bottom: 16px; }
+    .admin-form label { display: block; color: #aaa; font-size: 0.75rem; margin-bottom: 4px; }
+    .admin-form input, .admin-form textarea, .admin-form select {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      border: 1px solid #e100ff44;
+      border-radius: 8px;
+      background: #1a001f;
+      color: #eee;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.82rem;
+    }
+    .admin-form input:focus, .admin-form textarea:focus, .admin-form select:focus {
+      outline: none; box-shadow: 0 0 8px #e100ff; border-color: #e100ff;
+    }
+    .admin-form textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .btn-salvar { margin: 0; padding: 10px 28px; font-size: 0.82rem; }
+    .btn-cancelar-form {
+      margin: 0 0 0 10px;
+      padding: 10px 20px;
+      font-size: 0.82rem;
+      border-color: #666;
+      color: #666;
+      box-shadow: none;
+    }
+    .btn-cancelar-form:hover { border-color: #aaa; color: #aaa; background: transparent; box-shadow: none; }
+
+    /* AÇÕES */
+    .btn-acao {
+      padding: 4px 12px;
+      font-size: 0.7rem;
+      margin: 0 2px;
+      border-radius: 6px;
+      box-shadow: none;
+    }
+    .btn-editar  { border-color: #e100ff; color: #e100ff; }
+    .btn-deletar { border-color: #ff4444; color: #ff4444; }
+    .btn-deletar:hover { background: #ff4444; color: #000; box-shadow: none; transform: none; }
+    .btn-editar:hover  { background: #e100ff; color: #000; box-shadow: none; transform: none; }
+
+    select.status-select {
+      background: #1a001f;
+      color: #eee;
+      border: 1px solid #e100ff44;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      cursor: pointer;
+    }
+
+    .admin-msg {
+      font-size: 0.8rem;
+      color: #00dc64;
+      margin-bottom: 12px;
+      min-height: 18px;
+    }
+    .oculto { display: none !important; }
+
+    .admin-container { max-width: 1100px; }
+  </style>
+</head>
+<body>
+
+  <!-- ── LOGIN ── -->
+  <div id="admin-login">
+    <div id="login-box">
+      <h3>🔐 Acesso Dimensional Restrito</h3>
+      <input type="text"     id="login-usuario" placeholder="Usuário" autocomplete="off" />
+      <input type="password" id="login-senha"   placeholder="Senha" />
+      <div id="login-erro"></div>
+      <button id="btn-login">Abrir Portal Admin</button>
+      <p class="login-dica">Acesso restrito a agentes autorizados da MVC</p>
+    </div>
+  </div>
+
+  <!-- ── PAINEL ── -->
+  <div id="admin-painel" class="container admin-container">
+
+    <div class="admin-header-bar">
+      <h2>⚙️ Painel de Controle</h2>
+      <div class="admin-abas">
+        <button class="aba ativa" data-aba="produtos">Produtos</button>
+        <button class="aba"       data-aba="pedidos">Pedidos</button>
+      </div>
+      <button id="btn-logout">Sair</button>
+    </div>
+
+    <!-- ABA PRODUTOS -->
+    <div id="aba-produtos">
+      <div class="admin-msg" id="msg-produtos"></div>
+
+      <!-- Formulário adicionar/editar -->
+      <div class="admin-form" id="form-produto">
+        <h3 id="form-titulo">➕ Novo Produto</h3>
+        <input type="hidden" id="prod-id" />
+        <label>Nome</label>
+        <input type="text" id="prod-nome" placeholder="Ex: Cristal Dimensional" />
+        <label>Descrição</label>
+        <textarea id="prod-descricao" placeholder="Descreva o produto..."></textarea>
+        <div class="form-row">
+          <div>
+            <label>Preço (R$)</label>
+            <input type="number" id="prod-preco" placeholder="0.00" min="0" step="0.01" />
+          </div>
+          <div>
+            <label>Estoque</label>
+            <input type="number" id="prod-estoque" placeholder="0" min="0" />
+          </div>
+        </div>
+        <label>URL da Imagem (opcional)</label>
+        <input type="text" id="prod-imagem" placeholder="https://..." />
+        <div>
+          <button class="btn-salvar" id="btn-salvar-produto">Salvar Produto</button>
+          <button class="btn-cancelar-form oculto" id="btn-cancelar-produto">Cancelar</button>
+        </div>
+      </div>
+
+      <div class="admin-tabela-wrapper">
+        <table id="tabela-produtos">
+          <thead>
+            <tr>
+              <th>#</th><th>Nome</th><th>Preço</th><th>Estoque</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-produtos">
+            <tr><td colspan="5" style="text-align:center;color:#555">Carregando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ABA PEDIDOS -->
+    <div id="aba-pedidos" class="oculto">
+      <div class="admin-msg" id="msg-pedidos"></div>
+      <div class="admin-tabela-wrapper">
+        <table id="tabela-pedidos">
+          <thead>
+            <tr>
+              <th>#</th><th>Cliente</th><th>E-mail</th><th>Total</th><th>Status</th><th>Data</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-pedidos">
+            <tr><td colspan="6" style="text-align:center;color:#555">Carregando...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>

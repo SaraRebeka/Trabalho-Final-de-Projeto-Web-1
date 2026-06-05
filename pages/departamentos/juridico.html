@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jurídico - MVC</title>
+  <link rel="stylesheet" href="../../assets/css/estilos.css" />
+  <link rel="icon" href="../../assets/imagens/favicon(MVC).png">
+  <style>
+    .dept-page { max-width: 800px; }
+    .dept-voltar {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #ff6633;
+      text-decoration: none;
+      font-size: 0.82rem;
+    }
+    .dept-voltar:hover { opacity: 0.7; }
+    .dept-page-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .dept-page-icone { font-size: 2.5rem; }
+    .dept-page h2 { text-shadow: 0 0 8px #ff4400, 0 0 20px #ff440066; }
+
+    /* LOGIN RESTRITO */
+    #dept-login {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    #dept-login-box {
+      background: rgba(40, 5, 0, 0.85);
+      border: 1px solid #ff440066;
+      border-radius: 16px;
+      padding: 36px 32px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 30px #ff440033;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    #dept-login-box h3 {
+      color: #ff6633;
+      text-align: center;
+      font-size: 0.95rem;
+      text-shadow: 0 0 8px #ff4400;
+      margin-bottom: 6px;
+    }
+    #dept-login-box input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #ff440066;
+      border-radius: 8px;
+      background: #1a0005;
+      color: #eee;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+    }
+    #dept-login-box input:focus { outline: none; box-shadow: 0 0 8px #ff4400; border-color: #ff4400; }
+    #dept-login-erro { color: #ff8080; font-size: 0.78rem; text-align: center; min-height: 18px; }
+    #btn-dept-login {
+      margin-top: 0;
+      width: 100%;
+      padding: 12px;
+      font-size: 0.9rem;
+      border-color: #ff4400;
+      color: #ff6633;
+      box-shadow: 0 0 10px #ff440066;
+    }
+    #btn-dept-login:hover { background: #ff4400; color: #000; }
+    .login-dica { font-size: 0.7rem; color: #333; text-align: center; }
+
+    /* CONTEÚDO */
+    #dept-conteudo { display: none; }
+    #dept-conteudo.ativo { display: block; }
+    .dept-secao {
+      background: rgba(40, 5, 0, 0.5);
+      border: 1px solid #ff440033;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .dept-secao h3 { color: #ff6633; text-shadow: 0 0 8px #ff4400; margin-bottom: 12px; font-size: 0.95rem; }
+    .dept-secao p { text-align: left; font-size: 0.88rem; color: #aaa; margin-top: 0; }
+    .dept-secao ul { list-style: none; padding: 0; margin: 10px 0 0; }
+    .dept-secao ul li { color: #888; font-size: 0.82rem; padding: 6px 0; border-bottom: 1px solid #ffffff08; padding-left: 14px; position: relative; text-align: left; margin: 0; }
+    .dept-secao ul li::before { content: '›'; position: absolute; left: 0; color: #ff6633; }
+    .em-breve { text-align: center; color: #444; font-size: 0.8rem; margin-top: 30px; }
+    .classificado { 
+      text-align: center; 
+      color: #ff440055; 
+      font-size: 0.7rem; 
+      letter-spacing: 3px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container dept-page">
+    <a href="../portal.html" class="dept-voltar">← Voltar ao Portal</a>
+
+    <div class="dept-page-header">
+      <span class="dept-page-icone">⚖️</span>
+      <h2>Jurídico</h2>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="dept-login">
+      <div id="dept-login-box">
+        <h3>🔒 Acesso Restrito</h3>
+        <input type="text"     id="dept-usuario" placeholder="Usuário" autocomplete="off" />
+        <input type="password" id="dept-senha"   placeholder="Senha" />
+        <div id="dept-login-erro"></div>
+        <button id="btn-dept-login">Verificar Credenciais</button>
+        <p class="login-dica">Acesso exclusivo para agentes autorizados</p>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO RESTRITO -->
+    <div id="dept-conteudo">
+      <p style="text-align:center; margin-bottom:30px; color:#aaa;">Conformidade legal, contratos e licenciamento em todas as jurisdições conhecidas.</p>
+      <div class="dept-secao"><h3>📝 Contratos</h3><ul><li>Contrato NASA — vigente até 2028</li><li>Acordo CERN — renovação pendente</li><li>Parceria Fundação SCP — cláusulas em revisão</li><li>Contrato Academia de Altaira IV — ativo, sem pendências</li></ul></div>
+   <div class="dept-secao"><h3>🪐 Licenças Interdimensionais</h3><ul><li>Licença de operação — universo 42-S: ATIVA</li><li>Licença de exploração — setor Delta-9: EM RENOVAÇÃO</li><li>Licença comercial — multiversal: ATIVA</li></ul></div>
+   <div class="dept-secao"><h3>✅ Conformidade Multiversal</h3><p>A MVC opera em conformidade com o Tratado Interdimensional de 2025 e as diretrizes do Conselho de Realidades Estáveis. Auditoria anual prevista para Q3/2026.</p></div>
+      <p class="em-breve">🌀 Dados completos disponíveis apenas na rede interna dimensional.</p>
+      <p class="classificado">⚠ CLASSIFICADO — NÍVEL DE ACESSO VERIFICADO ⚠</p>
+    </div>
+  </div>
+
+  <script src="../../assets/js/script.js"></script>
+  <script>
+    const ADMIN_USER = 'admin'
+    const ADMIN_PASS = 'mvc@void2026'
+
+    if (sessionStorage.getItem('mvc_admin') === 'true') mostrarConteudo()
+
+    document.getElementById('btn-dept-login').addEventListener('click', verificar)
+    document.getElementById('dept-senha').addEventListener('keydown', e => {
+      if (e.key === 'Enter') verificar()
+    })
+
+    function verificar() {
+      const u = document.getElementById('dept-usuario').value.trim()
+      const s = document.getElementById('dept-senha').value
+      const erro = document.getElementById('dept-login-erro')
+      if (u === ADMIN_USER && s === ADMIN_PASS) {
+        sessionStorage.setItem('mvc_admin', 'true')
+        erro.textContent = ''
+        mostrarConteudo()
+      } else {
+        erro.textContent = '⚠️ Credenciais inválidas. Acesso negado.'
+        document.getElementById('dept-senha').value = ''
+      }
+    }
+
+    function mostrarConteudo() {
+      document.getElementById('dept-login').style.display = 'none'
+      document.getElementById('dept-conteudo').classList.add('ativo')
+    }
+  </script>
+</body>
+</html>

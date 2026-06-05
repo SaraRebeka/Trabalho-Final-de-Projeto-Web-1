@@ -1,0 +1,125 @@
+-- ============================================================
+--  Multiversal Void Company — Banco de Dados da Lojinha
+--  PostgreSQL
+-- ============================================================
+--  TABELA 1: produtos
+-- ============================================================
+CREATE TABLE produtos (
+    id          SERIAL          PRIMARY KEY,
+    nome        VARCHAR(150)    NOT NULL,
+    descricao   TEXT            NOT NULL,
+    preco       DECIMAL(10, 2)  NOT NULL CHECK (preco >= 0),
+    estoque     INTEGER         NOT NULL DEFAULT 0 CHECK (estoque >= 0),
+    imagem_url  VARCHAR(300),
+    criado_em   TIMESTAMP       NOT NULL DEFAULT NOW()
+);
+
+-- ============================================================
+--  TABELA 2: pedidos
+-- ============================================================
+CREATE TABLE pedidos (
+    id              SERIAL          PRIMARY KEY,
+    nome_cliente    VARCHAR(150)    NOT NULL,
+    email_cliente   VARCHAR(200)    NOT NULL,
+    itens           JSONB           NOT NULL,
+    total           DECIMAL(10, 2)  NOT NULL CHECK (total >= 0),
+    status          VARCHAR(30)     NOT NULL DEFAULT 'pendente'
+                                    CHECK (status IN ('pendente', 'confirmado', 'cancelado')),
+    criado_em       TIMESTAMP       NOT NULL DEFAULT NOW()
+);
+
+-- ============================================================
+--  Produtos temático da MVC
+-- ============================================================
+INSERT INTO produtos (nome, descricao, preco, estoque, imagem_url) VALUES
+
+(
+    'Cristal Dimensional Bruto',
+    'Fragmento coletado nas bordas do universo 42-S durante a fusão temporal de 2020. Emite uma leve luminescência azul e confunde bússolas convencionais. Uso decorativo ou ritual. Não nos responsabilizamos por saltos quânticos acidentais.',
+    299.90,
+    8,
+    NULL
+),
+(
+    'Portal de Bolso Mk. II',
+    'Versão compacta do nosso portal interdimensional. Cabe no bolso da calça (o bolso grande, não aquele inútil). Suporta até 3 saltos por carga. Bateria recarregável via energia cósmica ou tomada padrão brasileira.',
+    1499.00,
+    3,
+    NULL
+),
+(
+    'Chá de Estabilidade Existencial',
+    'Blend exclusivo desenvolvido em parceria com o Instituto Interdimensional de Memória Coletiva. Indicado para consumo antes de viagens entre realidades ou em momentos de crise ontológica. Sabor: menta com leve notas de paradoxo.',
+    49.90,
+    50,
+    NULL
+),
+(
+    'Escudo Anti-Anomalia Pessoal',
+    'Equipamento de proteção individual certificado pela Fundação SCP para uso em zonas de instabilidade dimensional. Ativação automática ao detectar entidades das classes Keter e Euclid. Tamanho único.',
+    879.00,
+    6,
+    NULL
+),
+(
+    'Diário de Viagem Multiversal',
+    'Caderno com 200 páginas em papel resistente a paradoxos temporais. As anotações feitas nele não desaparecem ao alterar a linha do tempo. Capa dura com símbolo da MVC gravado. Acompanha caneta de tinta permanente entre-dimensional.',
+    89.90,
+    20,
+    NULL
+),
+(
+    'Kit Sobrevivência Dimensional',
+    'Tudo que você precisa para não se perder entre universos: bússola quântica, mapa de bolso do multiverso (edição 2026), manual de primeiros socorros existenciais e um sanduíche de atum (lacrado, validade interdimensional).',
+    349.00,
+    12,
+    NULL
+),
+(
+    'Detector de Realidades Falsas',
+    'Aparelho portátil que analisa o ambiente e indica a probabilidade de você estar em uma simulação. Bateria dura 48h. Precisão de 94,7% (os outros 5,3% são casos que prefirimos não comentar). Inclui manual e estojo.',
+    599.00,
+    4,
+    NULL
+),
+(
+    'Caneca de Antimatéria',
+    'Bebe café e sabedoria ao mesmo tempo. Fabricada com liga resistente a colapsos gravitacionais, mantém a bebida na temperatura ideal por tempo indefinido. Aviso: não lavar com detergente comum — usar apenas solvente quântico.',
+    42.00,
+    30,
+    NULL
+),
+(
+    'Capacete Neural V3',
+    'Conecta sua mente à rede universal de ideias. Compatível com cérebros humanos, semi-humanos e alguns tipos de inteligência artificial. Três modos: leitura, escrita e modo silencioso (recomendado em reuniões).',
+    199.00,
+    10,
+    NULL
+),
+(
+    'Moletom Distorção Espacial',
+    'Quentinho em todas as realidades. Tecido desenvolvido com fibras extraídas de nebulosas frias do setor Gamma-7. Não amassa, não encolhe e adapta o tamanho automaticamente ao usuário. Disponível em preto-vazio e cinza-quântico.',
+    145.00,
+    18,
+    NULL
+),
+(
+    'Portal de Bolso (Beta)',
+    'Versão Beta do nosso clássico portal dimensional. Abre até 2 buracos dimensionais por dia — use com sabedoria. Pode apresentar instabilidades ocasionais. Em caso de destino errado, acione o suporte em até 48h interdimensionais.',
+    299.00,
+    7,
+    NULL
+),
+(
+    'Adesivos Holográficos Quânticos',
+    'Brilham conforme seu humor. Pacote com 12 adesivos que respondem ao estado emocional do portador via campo de energia biométrica. Não colam em superfícies de realidades paralelas. Hipoalergênicos e aprovados pela MVC.',
+    15.00,
+    100,
+    NULL
+);
+
+-- ============================================================
+--  "E FAÇA-SE A LUZ"
+-- ============================================================
+SELECT * FROM produtos
+ORDER BY id;

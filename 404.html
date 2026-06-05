@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 - Dimensão Não Encontrada</title>
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <link rel="icon" href="assets/imagens/favicon(MVC).png">
+  <style>
+    .erro-404-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .erro-404-codigo {
+      font-size: clamp(5rem, 20vw, 10rem);
+      color: #e100ff;
+      text-shadow: 0 0 20px #e100ff, 0 0 60px #e100ff66;
+      line-height: 1;
+      margin-bottom: 10px;
+      animation: pulsar 2s ease-in-out infinite;
+    }
+    @keyframes pulsar {
+      0%, 100% { text-shadow: 0 0 20px #e100ff, 0 0 60px #e100ff66; }
+      50%       { text-shadow: 0 0 40px #e100ff, 0 0 100px #e100ff99, 0 0 140px #e100ff33; }
+    }
+    .erro-404-titulo {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color: #fff;
+      text-shadow: 0 0 10px #e100ff;
+      margin-bottom: 16px;
+    }
+    .erro-404-msg {
+      font-size: 0.9rem;
+      color: #aaa;
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.8;
+    }
+    .erro-404-portal {
+      font-size: 4rem;
+      animation: girar 6s linear infinite;
+      margin-bottom: 28px;
+    }
+    @keyframes girar {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .btn-voltar-home {
+      display: inline-block;
+      padding: 12px 32px;
+      border: 2px solid #e100ff;
+      color: #e100ff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      box-shadow: 0 0 10px #e100ff;
+    }
+    .btn-voltar-home:hover {
+      background: #e100ff;
+      color: #000;
+      box-shadow: 0 0 20px #e100ff, 0 0 40px #e100ff;
+    }
+    .erro-404-coords {
+      font-size: 0.7rem;
+      color: #333;
+      margin-top: 40px;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="erro-404-container">
+    <div class="erro-404-portal">🌀</div>
+    <div class="erro-404-codigo">404</div>
+    <p class="erro-404-titulo">Dimensão Não Encontrada</p>
+    <p class="erro-404-msg">
+      Esta página foi deslocada para outra realidade.<br/>
+      Nossa equipe já enviou uma expedição para recuperá-la.<br/>
+      Tempo estimado de retorno: <strong style="color:#e100ff">indefinido</strong>.
+    </p>
+    <a href="index.html" class="btn-voltar-home">↩ Retornar à Realidade Principal</a>
+    <p class="erro-404-coords">COORDENADAS: 404-NULL // UNIVERSO: DESCONHECIDO // STATUS: PERDIDO</p>
+  </div>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

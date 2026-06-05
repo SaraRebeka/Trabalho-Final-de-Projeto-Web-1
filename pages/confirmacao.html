@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pedido Confirmado - Multiversal Void</title>
+  <link rel="stylesheet" href="../assets/css/estilos.css" />
+  <link rel="icon" href="../assets/imagens/favicon(MVC).png">
+</head>
+<body>
+
+  <div class="container confirmacao-container">
+    <div class="confirmacao-box">
+      <div class="confirmacao-icone">✅</div>
+      <h2>Pedido Recebido!</h2>
+      <p class="confirmacao-msg">Seu pedido foi registrado com sucesso no sistema multiversal.</p>
+
+      <div class="confirmacao-detalhes">
+        <p>🔢 Nº do Pedido: <strong id="conf-id">—</strong></p>
+        <p>👤 Nome: <strong id="conf-nome">—</strong></p>
+        <p>📧 E-mail: <strong id="conf-email">—</strong></p>
+        <p>📍 Endereço: <strong id="conf-endereco">—</strong></p>
+        <p>💰 Total: <strong id="conf-total">—</strong></p>
+        <p>📦 Status: <strong id="conf-status">—</strong></p>
+      </div>
+
+      <div id="conf-itens" class="conf-itens"></div>
+
+      <p class="confirmacao-aviso">
+        Uma confirmação foi registrada para o e-mail informado.<br/>
+        Nossos agentes interdimensionais já estão preparando sua entrega. 🚀
+      </p>
+
+      <a href="lojinha.html" class="btn-voltar-loja">Continuar Comprando</a>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/confirmacao.js"></script>
+</body>
+</html>

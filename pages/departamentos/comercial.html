@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Departamento Comercial - MVC</title>
+  <link rel="stylesheet" href="../../assets/css/estilos.css" />
+  <link rel="icon" href="../../assets/imagens/favicon(MVC).png">
+  <style>
+    .dept-page { max-width: 800px; }
+    .dept-page-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+    .dept-page-icone { font-size: 2.5rem; }
+    .dept-voltar {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: #e100ff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: opacity 0.2s;
+    }
+    .dept-voltar:hover { opacity: 0.7; }
+    .dept-secao {
+      background: rgba(30, 0, 40, 0.7);
+      border: 1px solid #e100ff33;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+    .dept-secao h3 { margin-bottom: 12px; font-size: 0.95rem; }
+    .dept-secao p { text-align: left; font-size: 0.88rem; color: #aaa; margin-top: 0; }
+    .em-breve {
+      text-align: center;
+      color: #444;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container dept-page">
+    <a href="../portal.html" class="dept-voltar">← Voltar ao Portal</a>
+    <div class="dept-page-header">
+      <span class="dept-page-icone">🛒</span>
+      <h2>Departamento Comercial</h2>
+    </div>
+    <p style="text-align:center; margin-bottom:30px;">Responsável pelas operações de venda, parcerias estratégicas e licenciamento de tecnologias MVC.</p>
+    <div class="dept-secao"><h3>🛍️ Lojinha</h3><p>Acesse nossa loja de artefatos e equipamentos multiversais. <a href="../lojinha.html" style="color:#e100ff">Ir para a Lojinha →</a></p></div>
+   <div class="dept-secao"><h3>🤝 Parceiros</h3><p>Conheça nossas parcerias interdimensionais e instituições colaboradoras. <a href="../parcerias.html" style="color:#e100ff">Ver Parcerias →</a></p></div>
+   <div class="dept-secao"><h3>📜 Licenciamento</h3><p>Interessado em licenciar tecnologia MVC para uso em seu universo? Entre em contato com nossa equipe comercial. <a href="../contato.html" style="color:#e100ff">Fale conosco →</a></p></div>
+    <p class="em-breve">🌀 Conteúdo completo em desenvolvimento dimensional.</p>
+  </div>
+  <script src="../../assets/js/script.js"></script>
+</body>
+</html>

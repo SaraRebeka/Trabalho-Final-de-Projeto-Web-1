@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lojinha - Multiversal Void</title>
+  <link rel="stylesheet" href="../assets/css/estilos.css" />
+  <link rel="icon" href="../assets/imagens/favicon(MVC).png">
+</head>
+<body>
+
+  <!-- CARRINHO FLUTUANTE -->
+  <div id="carrinho-flutuante" class="carrinho-flutuante oculto">
+    <div class="carrinho-header">
+      <h3>🛒 Carrinho</h3>
+      <button id="fechar-carrinho" class="btn-fechar">✕</button>
+    </div>
+    <div id="carrinho-itens" class="carrinho-itens">
+      <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+    </div>
+    <div class="carrinho-footer">
+      <p class="carrinho-total">Total: <span id="carrinho-total">R$ 0,00</span></p>
+      <button id="btn-checkout" class="btn-checkout" disabled>Finalizar Pedido</button>
+    </div>
+  </div>
+
+  <!-- BOTÃO CARRINHO -->
+  <button id="btn-abrir-carrinho" class="btn-carrinho-abrir">
+    🛒 <span id="carrinho-contador">0</span>
+  </button>
+
+  <div class="container lojinha-container">
+    <h2>Lojinha Multiversal</h2>
+    <p>Artefatos, equipamentos e curiosidades de todos os cantos do multiverso.</p>
+
+    <div class="busca-wrapper">
+      <input type="text" id="busca-input" placeholder="Buscar produto..." class="busca-input" />
+    </div>
+
+    <div id="grade-produtos" class="grade-produtos">
+      <p class="carregando">Carregando produtos do multiverso...</p>
+    </div>
+  </div>
+
+  <script src="../assets/js/script.js"></script>
+  <script src="../assets/js/lojinha.js"></script>
+</body>
+</html>
