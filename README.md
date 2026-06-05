@@ -1,12 +1,14 @@
 # 🕴️ Para quem for testar e avaliar 
 
+Precisa rodar localmente então baixe as coisas;
+
 Lembre de caminhar até a pasta onde está o back-end;
 
 Lempre do "npm i" e do "node --watch index.js";
 
 No database use sua senha local, crie a database exatamente como "mvc-lojinha" ou muda lá no database e bom você sabe copiar e colar o negocio pra criar as tabelas do banco (Alias aqui é PostgreSQL); 
 
-Quando digitar ADMIN já tendo aberto o projeto, abra no admin.js pra pegar a senha e o login e ver mais coisa.
+Quando digitar ADMIN já tendo aberto o projeto no navegador, abra no admin.js pra pegar a senha e o login e ver mais coisa.
 
 Ah... Sim, a pasta em imagens "produtos" ainda tá sem imagens para os produtos pq eu não tô com tempo de desenhar eles.
 
@@ -276,7 +278,8 @@ Multiversal-Void-Company/
 Sara Rebeka Pinheiro Mendes, S.D.S, Sasotsu D. Sara em outras dimensões, Sarinha para os amigos ou simplismente "Sara".
 Cursa Análise e Desenvolvimento de Sistemas (ADS) no IFCE Jaguaruana.
 
-Projeto desenvolvido para fins acadêmicos, como um estudo de desenvolvimento web, banco de dados e arquitetura de software.
+# 🪧 Lembre-se
+Esse projeto foi desenvolvido para fins acadêmicos, como um estudo de desenvolvimento web, banco de dados e arquitetura de software.
 
 ---
 
